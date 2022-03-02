@@ -1,0 +1,13 @@
+
+
+ARG ROS_DISTRO=foxy
+
+FROM ros:${ROS_DISTRO}-ros-base AS build-base
+
+ARG BUILDARCH 
+ARG TARGETARCH  
+ARG BUILDPLATFORM
+ARG TARGETPLATFORM
+RUN echo "I am running on $BUILDPLATFORM, building for ${TARGETPLATFORM}"  
+RUN echo "I am running on $BUILDARCH, building for $TARGETARCH"  
+RUN echo ${TARGETPLATFORM}  
